@@ -44,11 +44,12 @@ body {
 }
 
 #imageFlow .text {
-	position: absolute; 
-	left: 50%; 
+	position: absolute;
+	left: 50%;
 	margin-left: -150px;
 	width: 300px;
-	bottom: 10%; 
+	height: 85px;
+	bottom: 10%;
 	text-align: center;
 	color: #FFF;
 	font-family: verdana, arial, Helvetica, sans-serif;
@@ -62,12 +63,13 @@ body {
 
 #imageFlow .legend {
 	font-size: 0.8em;
-	width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp:4;
-    -webkit-box-orient:vertical;
+	line-height: 17px\0;  /*针对IE */
+	height: 70px;	
+	display: -webkit-box !important;
+	overflow: hidden;
+	text-overflow: ellopsis;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4; 
 }
 
 #imageFlow .scrollbar {

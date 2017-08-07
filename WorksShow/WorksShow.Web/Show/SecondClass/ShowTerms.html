@@ -15,7 +15,8 @@
 			border: 15px solid transparent;
 			/* padding: 10px 20px; */
 			/* margin: 30px auto; */
-			margin: 0;padding: 0;
+			margin: 0;
+			padding: 0;
 			color: #15b26d;
 		}
 
@@ -25,6 +26,11 @@
 			-o-border-image: url(images/huawen_biankuang.png) 27 round;
 			border-image: url(images/huawen_biankuang.png) 27 round;
 		}
+
+		.navbar {
+			position: static;
+		}
+		.htmleaf-container{margin-top: 50px;}
 	</style>
 	<!--[if IE]>
 		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
@@ -32,11 +38,11 @@
 </head>
 
 <!-- <object data="navbar.html" width="100%"></object> -->
-<script type="text/javascript" src="navbar.js"></script>
+
 <body class="default">
+	<script type="text/javascript" src="navbar.js"></script>
 	<div class="htmleaf-container">
 		<!-- <header class="htmleaf-header">
-
 		</header> -->
 		<div class="wrapper">
 			<div id="content">
@@ -104,7 +110,7 @@
 					terms = items;
 
 					var contentTerms = " ";
-					 for (var item=1; item< items.length;item++) {
+					for (var item = 1; item < items.length; item++) {
 						contentTerms += "<div class='xs-6 sm-4 lg-3 demo-item' >" +
 							"<img class='mg-trigger img-responsive  element element1' src='" + items[item].img_url + "' alt=''>" +
 							"<span'>" + items[0].title + "<br>" + items[item].content + "</span>" +
@@ -118,7 +124,7 @@
 			});
 			// ajax end
 			var contentLevel = " ";
-			for (var item=1;item< terms.length;item++) {
+			for (var item = 1; item < terms.length; item++) {
 				// 获取对应学期下的等级信息
 				$.ajax({
 					url: "/Service/pData.ashx",
