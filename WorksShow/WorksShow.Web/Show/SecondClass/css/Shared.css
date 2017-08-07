@@ -9,9 +9,12 @@ a {
 }
 
 .navbar {
+    position: fixed;
+    top: 0;
     width: 100%;
-    height: 70px;
+    height: 60px;
     background: url("../images/eol_index_footer_bg.jpg") repeat-x;
+    z-index: 2147483647;
 }
 
 .navbarBox {
@@ -27,8 +30,8 @@ a {
 
 .schoolName {
     width: 50%;
-    height: 100%;
-    background: url("../images/school_name.png") no-repeat 0 -6px;
+    height: 50px;
+    background: url("../images/school_name.png") no-repeat 0 -5px;
     background-size: 255px 60px;
     float: left;
 }
@@ -37,9 +40,7 @@ a {
     vertical-align: middle;
 }
 
-
 /* 标题 */
-
 .navTitle {
     color: white;
     width: 50%;
