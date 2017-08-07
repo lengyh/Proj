@@ -1,0 +1,75 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar {
+    width: 100%;
+    height: 70px;
+    background: url("../images/eol_index_footer_bg.jpg") repeat-x;
+}
+
+.navbarBox {
+    margin: 0 auto;
+    /* width: 1004px; */
+    max-width: 1004px;
+    min-width: 540px;
+    height: 60px;
+}
+
+
+/* 学校名称 */
+
+.schoolName {
+    width: 50%;
+    height: 100%;
+    background: url("../images/school_name.png") no-repeat 0 -6px;
+    background-size: 255px 60px;
+    float: left;
+}
+
+.schoolName img {
+    vertical-align: middle;
+}
+
+
+/* 标题 */
+
+.navTitle {
+    color: white;
+    width: 50%;
+    height: 100%;
+    float: left;
+    line-height: 60px;
+    text-align: right;
+}
+
+.navTitle p {
+    font-family:Author, Comic Sans,Cursive ;
+    font-size: 20px;
+}
+
+/* 底部版权信息 */
+.footer {
+    position: fixed;
+    bottom: -0;
+    z-index: 2000;
+    width: 100%;
+    height: 30px;
+    background: url("../images/eol_index_footer_bg.jpg") repeat-x;
+}
+
+.footerBox {
+    text-align: center;
+}
+
+.footer p {
+    font-size: 14px;
+    line-height: 30px;
+    color: white;
+}

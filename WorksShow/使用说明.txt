@@ -1,0 +1,7 @@
+1、后台登录地址：http://你的网址/admin/login.aspx
+
+2、默认管理员帐号：admin，密码：admin888
+
+3、数据库位置
+WorksShow.Web\App_Data\DTcmsdb.mdb
+
