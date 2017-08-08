@@ -1,10 +1,13 @@
-#过滤数据库文件、sln解决方案文件、配置文件  
+#过滤文件  
 *.ldb
 *.sln
 *.config
 
-#过滤文件夹Debug,Release,obj
+#过滤文件夹
 Debug/
 Release/ 
 obj/
 bin/
+*.cache
+*.cache
+*.suo
