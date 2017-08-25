@@ -24,6 +24,7 @@ namespace WorksShow.Web.Service
             if (string.IsNullOrEmpty(type)) return;
             string teamId = context.Request["teamId"];
             string levelName = context.Request["levelName"];
+            string maxNum = context.Request["maxNum"];
             LitJson.JsonData json = null;
                 //根据不同的参数类型，处理不同的数据
                 switch (type)
@@ -32,15 +33,16 @@ namespace WorksShow.Web.Service
                         json = SecondClassroomTeamList();
                         break;
                     case "WorksList":
+                        if (string.IsNullOrEmpty(maxNum)) maxNum = "0";
                         if (!string.IsNullOrEmpty(teamId))
                         {
                             if (!string.IsNullOrEmpty(levelName))
                             {
-                                json = WorksList(int.Parse(teamId), levelName);
+                                json = WorksList(int.Parse(teamId), levelName, int.Parse(maxNum));
                             }
-                            else json = WorksList(int.Parse(teamId));
+                            else json = WorksList(int.Parse(teamId), int.Parse(maxNum));
                         }
-                        else json = WorksList();
+                        else json = WorksList(int.Parse(maxNum));
                         break;
                     case "GetWebIndexName": json = GetWebIndexName();  break;
                     case "LevelList": json = LevelList(int.Parse(teamId)); break;
@@ -84,7 +86,7 @@ namespace WorksShow.Web.Service
         /// </summary>
         /// <param name="teamId">学期ID</param>
         /// <returns>以Json格式返回需要的数据，结果按等级排序，数据包括 ID、名称、链接、描述 等必要的信息</returns>
-        public LitJson.JsonData WorksList(int teamId)
+        public LitJson.JsonData WorksList(int teamId, int maxNum = 0)
         {
             IList<int> level = catBll.GetLevelIDByTermID(teamId.ToString());
             StringBuilder str = new StringBuilder();
@@ -96,7 +98,7 @@ namespace WorksShow.Web.Service
             str.Append(level[level.Count-1]+")");
 
             //channel_id是Parent，它的children包括学期及等级,学期id（65-68）这里的category_id前面不能加空格
-            DataSet artDs = artBll.GetList("category_id in " + str);
+            DataSet artDs = artBll.GetList("category_id in " + str,maxNum);
 
             return GetJsonByDataset(artDs);
         }
@@ -108,12 +110,12 @@ namespace WorksShow.Web.Service
         /// <param name="teamId">学期ID</param>
         /// <param name="levelName">等级名称，如一等奖</param>
         /// <returns>以Json格式返回需要的数据，结果按等级排序，数据包括 ID、名称、链接、描述 等必要的信息</returns>
-        public LitJson.JsonData WorksList(int teamId, string levelName)
+        public LitJson.JsonData WorksList(int teamId, string levelName, int maxNum = 0)
         {
             int id = catBll.GetWorkInfo(teamId.ToString(),levelName);
 
             //这里的category_id前面不能加空格
-            DataSet artDs = artBll.GetList("category_id="+id);
+            DataSet artDs = artBll.GetList("category_id="+id,maxNum);
             return GetJsonByDataset(artDs);
         }
 
@@ -121,10 +123,10 @@ namespace WorksShow.Web.Service
         /// 获取系统中所有的作品信息
         /// </summary>
         /// <returns>以Json格式返回需要的数据，结果按学期和等级排序，数据包括 ID、名称、链接、描述 等必要的信息</returns>
-        public LitJson.JsonData WorksList()
+        public LitJson.JsonData WorksList(int maxNum = 30)
         {
             //channel_id=19代表学生作品 这里的channel_id前面不能加空格
-            DataSet ds = artBll.GetList("channel_id=19");
+            DataSet ds = artBll.GetList("channel_id=19",maxNum);
             return GetJsonByDataset(ds);
         }
 

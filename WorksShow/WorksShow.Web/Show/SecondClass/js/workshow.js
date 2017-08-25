@@ -117,16 +117,12 @@ var imf = function () {
 		this.arR.onclick = this.arR.ondblclick = function () {
 			if (this.parent.view < this.parent.NF - 1) {
 				this.parent.calc(1);
-				// alert("view:"+this.parent.view+"\nNF"+this.parent.NF);
-				//this.parent.view :当前浏览照片序号
-				//this.parent.NF :总照片张数
 			}
 		}
 		/* ==== Left arrow ==== */
 		this.arL.onclick = this.arL.ondblclick = function () {
 			if (this.parent.view > 0) {
 				this.parent.calc(-1);
-				// alert(this.parent.calc(-1));
 			}
 		}
 	}
@@ -134,7 +130,6 @@ var imf = function () {
 	ImageFlow.prototype = {
 		/* ==== targets ==== */
 		calc: function (inc) {
-			// alert("NF:"+this.NF+"\nview:"+this.view)
 			if (inc) this.view += inc;
 			var tw = 0;
 			var lw = 0;
@@ -152,7 +147,6 @@ var imf = function () {
 				var tDiv=document.createElement("div");
 				tDiv.innerHTML=o.text;
 				this.legend.replaceChild(tDiv,this.legend.firstChild);
-				// this.legend.innerHTML(o.text);
 				/* ---- update hyperlink ---- */
 				if (o.url) {
 					o.img.className = 'diapo link';

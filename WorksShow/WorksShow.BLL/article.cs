@@ -64,9 +64,12 @@ namespace WorksShow.BLL
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public DataSet GetList(string strWhere)
+        /// <param name="strWhere">where子句</param>
+        /// <param name="maxNum">最大数据条数，默认为0,为0时取全部数据</param>
+        /// <returns></returns>
+        public DataSet GetList(string strWhere,int maxNum=0)
         {
-            return dal.GetList(strWhere);
+            return dal.GetList(maxNum, strWhere);
         }
 
         /// <summary>

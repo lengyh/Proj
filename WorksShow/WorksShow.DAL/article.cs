@@ -319,11 +319,16 @@ namespace WorksShow.DAL
         /// <summary>
         /// 获得数据列表
         /// </summary>
-        public DataSet GetList(string strWhere)
+        public DataSet GetList(int maxNum,string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
             //strSql.Append("select id,channel_id,category_id,title,author,form,zhaiyao,link_url,img_url,seo_title,seo_keywords,seo_description,content,sort_id,click,digg_good,digg_act,is_msg,is_top,is_red,is_hot,is_slide,is_lock,add_time ");
-            strSql.Append("SELECT  T1.id, T1.channel_id, T1.category_id, T1.title, T1.author, T1.form, T1.zhaiyao, T1.link_url, T1.img_url, T1.content,T1.is_top ,T1.sort_id,T1.add_time, T2.title AS levelTitle, T3.title AS termsTitle, T3.content AS termsContent ");
+            strSql.Append("SELECT ");
+            if (maxNum != 0)
+            {
+                strSql.Append(" TOP " + maxNum);
+            }
+            strSql.Append(" T1.id, T1.channel_id, T1.category_id, T1.title, T1.author, T1.form, T1.zhaiyao, T1.link_url, T1.img_url, T1.content,T1.is_top ,T1.sort_id,T1.add_time, T2.title AS levelTitle, T3.title AS termsTitle, T3.content AS termsContent ");
             //strSql.Append(" FROM dt_article ");
             strSql.Append(" FROM ((dt_article T1 LEFT OUTER JOIN dt_category T2 ON T1.category_id = T2.id) LEFT OUTER JOIN dt_category T3 ON T2.parent_id = T3.id) ");
             if (strWhere.Trim() != "")

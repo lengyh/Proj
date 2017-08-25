@@ -58,7 +58,8 @@
 			$.ajax({
 				url: "/Service/pData.ashx",
 				data: {
-					"t": "WorksList"
+					"t": "WorksList",
+					"maxNum":"30"      //页面显示的数据量
 				},
 				type: "post",
 				datatype: "json",
