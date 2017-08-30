@@ -757,12 +757,14 @@ p { margin: 0 0 11px; }
   }
 }
 
+.wrapper {position:relative;max-width: 1600px;margin: 0 auto;}
+
 /* NO GRID */
 .no-grid .wrapper {position:relative;max-width: 1600px;margin: 0 auto;}
 .no-grid .mg-row{float: left;width: 100%;margin-bottom: 0}
 .no-grid .demo-item {
     float: left;
-    width: 100%;
+    width: 33%;
     margin-bottom: 15px;
     padding:0 12px;
 }

@@ -11,11 +11,14 @@ body {
 }
 
 #imageFlow {
-	position: absolute;
-	width: 100%;
-	height: 80%;
-	left: 0%;
+	position:absolute;
+	width: 100%;	
+	left: 0%;	
 	top: 8%;
+	height: 80%;
+	/*top: 5px;	
+	margin-top:100px;
+	*/
 	background: #000;
 }
 
@@ -39,8 +42,13 @@ body {
 #imageFlow .top {
 	position: absolute;
 	width: 100%;
-	height: 40%;
+	height: 0px;
 	background: #181818;
+	top:18px;
+	color:White;
+	/* new 
+	margin-top:-100px;
+	border:1px solid red;*/
 }
 
 #imageFlow .text {
@@ -92,15 +100,18 @@ body {
 
 #imageFlow .arrow-left {
 	position: absolute;
+	height:16px;
 }
 
 #imageFlow .arrow-right {
 	position: absolute;
 	right: 0px;
+	height:16px;
 }
 
 #imageFlow .bar {
 	position: absolute;
-	height: 16px;
+	margin-top:2.5px;
+	height: 10px;
 	left: 25px;
 }

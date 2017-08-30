@@ -1,33 +1,14 @@
-﻿document.write("<div class=\"navbar\">")
-document.write("<div class=\"navbarBox\">")
-document.write("        <div class=\"schoolName\">")
+﻿document.write("<div class=\"navbar\">");
+document.write("<div class=\"navbarBox\">");
+document.write("        <div class=\"schoolName\">");
 // <!-- <img width="255px" height="60px" src="images/school_name.png"> -->
-document.write("        </div>")
-document.write("        <div class=\"navTitle\"><p>...</p></div>")
-document.write("    </div>")
-document.write("</div>")
-document.write("<script>")
-document.write("   $(function () {")
-// document.write("        //获取平台名称")
-document.write("        $.ajax({")
-document.write("            url: \"/Service/pData.ashx\",")
-document.write("            data: {")
-document.write("                \"t\": \"GetWebIndexName\"")
-document.write("            },")
-document.write("            type: \"post\",")
-document.write("            datatype: \"json\",")
-document.write("            async: false,")
-document.write("           success: function (data) {")
-document.write("              var data = eval('(' + data + ')');")
-document.write("           data = $.parseJSON(data);")
-document.write("         console.log(data);")
-document.write("            $(\".navTitle p\")[0].innerHTML = data.WebIndexName;")
-document.write("            },")
-document.write("          error: function (date) {")
-document.write("            $(\".navTitle p\")[0].innerHTML = \"学生作品展示平台\";")
-document.write("               alert(\"信息获取出错。正在刷新页面...\");")
-document.write("            location.reload(true);")
-document.write("          }")
-document.write("     })")
-document.write("  })")
-document.write("</script>")
+document.write("        </div>");
+document.write("        <div class=\"navTitle\"><p style='clear:right;'>玩命加载中...</p></div>");
+document.write("    </div>");
+document.write("</div>");
+document.write("<script>");
+document.write("   $(function () {");
+// document.write("        //获取平台名称");
+document.write("$(\".navTitle p\").html(this.title);");
+document.write("  })");
+document.write("</script>");
