@@ -40,3 +40,10 @@ C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.Mo
 C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.Model\obj\Debug\WorksShow.Model.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.Model\obj\Debug\WorksShow.Model.dll
 C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.Model\obj\Debug\WorksShow.Model.pdb
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Model\bin\Debug\WorksShow.Model.dll
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Model\bin\Debug\WorksShow.Model.pdb
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Model\bin\Debug\WorksShow.Common.dll
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Model\bin\Debug\WorksShow.Common.pdb
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Model\obj\Debug\WorksShow.Model.csprojResolveAssemblyReference.cache
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Model\obj\Debug\WorksShow.Model.dll
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Model\obj\Debug\WorksShow.Model.pdb

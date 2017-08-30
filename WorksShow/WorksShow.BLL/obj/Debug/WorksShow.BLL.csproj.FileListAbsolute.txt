@@ -89,3 +89,16 @@ C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.BL
 C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.BLL\obj\Debug\WorksShow.BLL.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.BLL\obj\Debug\WorksShow.BLL.dll
 C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.BLL\obj\Debug\WorksShow.BLL.pdb
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.BLL\bin\Debug\WorksShow.BLL.dll
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.BLL\bin\Debug\WorksShow.BLL.pdb
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.BLL\bin\Debug\WorksShow.Common.dll
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.BLL\bin\Debug\WorksShow.DAL.dll
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.BLL\bin\Debug\WorksShow.Model.dll
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.BLL\bin\Debug\WorksShow.DBUtility.dll
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.BLL\bin\Debug\WorksShow.Common.pdb
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.BLL\bin\Debug\WorksShow.DAL.pdb
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.BLL\bin\Debug\WorksShow.Model.pdb
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.BLL\bin\Debug\WorksShow.DBUtility.pdb
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.BLL\obj\Debug\WorksShow.BLL.csprojResolveAssemblyReference.cache
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.BLL\obj\Debug\WorksShow.BLL.dll
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.BLL\obj\Debug\WorksShow.BLL.pdb

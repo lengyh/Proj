@@ -40,3 +40,10 @@ C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.DB
 C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.DBUtility\obj\Debug\WorksShow.DBUtility.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.DBUtility\obj\Debug\WorksShow.DBUtility.dll
 C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.DBUtility\obj\Debug\WorksShow.DBUtility.pdb
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.DBUtility\bin\Debug\WorksShow.DBUtility.dll
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.DBUtility\bin\Debug\WorksShow.DBUtility.pdb
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.DBUtility\bin\Debug\WorksShow.Common.dll
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.DBUtility\bin\Debug\WorksShow.Common.pdb
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.DBUtility\obj\Debug\WorksShow.DBUtility.csprojResolveAssemblyReference.cache
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.DBUtility\obj\Debug\WorksShow.DBUtility.dll
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.DBUtility\obj\Debug\WorksShow.DBUtility.pdb

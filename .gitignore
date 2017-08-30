@@ -11,3 +11,5 @@ bin/
 *.cache
 *.cache
 *.suo
+*.dll
+*.dll

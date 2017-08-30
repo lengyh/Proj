@@ -24,3 +24,7 @@ C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.Co
 C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.Common\bin\Debug\WorksShow.Common.pdb
 C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.Common\obj\Debug\WorksShow.Common.dll
 C:\Users\Administrator\Desktop\新建文件夹\WorksShow7\WorksShow\WorksShow.Common\obj\Debug\WorksShow.Common.pdb
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Common\bin\Debug\WorksShow.Common.dll
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Common\bin\Debug\WorksShow.Common.pdb
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Common\obj\Debug\WorksShow.Common.dll
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Common\obj\Debug\WorksShow.Common.pdb

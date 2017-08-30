@@ -1,7 +1,4 @@
-﻿document.write("")
-document.write("<link href=\"css/Shared.css\" rel=\"Stylesheet\" type=\"text/css\" />")
-document.write("<script src=\"js/jquery-1.11.0.min.js\"></script>")
-document.write("<div class=\"navbar\">")
+﻿document.write("<div class=\"navbar\">")
 document.write("<div class=\"navbarBox\">")
 document.write("        <div class=\"schoolName\">")
 // <!-- <img width="255px" height="60px" src="images/school_name.png"> -->
