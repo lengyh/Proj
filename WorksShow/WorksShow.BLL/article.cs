@@ -88,5 +88,6 @@ namespace WorksShow.BLL
             return dal.GetList(pageSize, pageIndex, strWhere, filedOrder, out recordCount);
         }
         #endregion  Method
+
     }
 }

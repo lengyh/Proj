@@ -25,6 +25,7 @@ namespace WorksShow.Web.Service
             string teamId = context.Request["teamId"];
             string levelName = context.Request["levelName"];
             string maxNum = context.Request["maxNum"];
+            string workID = context.Request["workID"];
             LitJson.JsonData json = null;
                 //根据不同的参数类型，处理不同的数据
                 switch (type)
@@ -46,6 +47,7 @@ namespace WorksShow.Web.Service
                         break;
                     case "GetWebIndexName": json = GetWebIndexName();  break;
                     case "LevelList": json = LevelList(int.Parse(teamId)); break;
+                    case "GetWorkbyID": json = GetWorkbyID(int.Parse(workID)); break;
                 }
 
             //返回处理结果
@@ -77,6 +79,17 @@ namespace WorksShow.Web.Service
             //获取数据,59代表第二课堂信息
             DataSet artDs = catBll.GetTermList("59",true);
             //转换为json并且返回
+            return GetJsonByDataset(artDs);
+        }
+
+        /// <summary>
+        /// 根据作品ID获取作品信息
+        /// </summary>
+        /// <param name="workID">作品ID</param>
+        /// <returns>返回作品信息</returns>
+        public LitJson.JsonData GetWorkbyID(int workID)
+        {
+            DataSet artDs = artBll.GetList("id = "+workID);
             return GetJsonByDataset(artDs);
         }
 
