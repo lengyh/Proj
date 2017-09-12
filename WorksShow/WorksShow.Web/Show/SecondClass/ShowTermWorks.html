@@ -52,48 +52,49 @@
 
 	<script type="text/javascript" src="js/workshow.js"></script>
 	<script type="text/javascript">
-		$(function () {
-			if (getUrlParam("term") == null || getUrlParam("term") == "" || getUrlParam("level") == null || getUrlParam(
+	    $(function () {
+	        if (getUrlParam("term") == null || getUrlParam("term") == "" || getUrlParam("level") == null || getUrlParam(
 					"level") == "") {
-				alert("参数错误，请回到上一页")
-				window.open("ShowTerms.html", "_self");
-				return;
-			}
-			//			alert(getUrlParam("term")+".../n.."+unescape(getUrlParam("level")));
-			$.ajax({
-				url: "/Service/pData.ashx",
-				data: {
-					"t": "WorksList",
-					"teamId": getUrlParam("term"),
-					"levelName": unescape(getUrlParam("level")),
-					"maxNum":"0"
-				},
-				type: "post",
-				datatype: "json",
-				async: false,
-				success: function (data) {
-					// alert(data);
-					var data = eval('(' + data + ')');
-					testJson = $.parseJSON(data);
-					console.log(testJson);
-					var content = "";
-					// alert("data:" + testJson.ds);
-					var items = testJson.ds;
-					for (var item in items) {
-						content += "<a rel='" + items[item].img_url + //图片地址
+	            alert("参数错误，请回到上一页")
+	            window.open("ShowTerms.html", "_self");
+	            return;
+	        }
+	        //			alert(getUrlParam("term")+".../n.."+unescape(getUrlParam("level")));
+	        $.ajax({
+	            url: "/Service/pData.ashx",
+	            data: {
+	                "t": "WorksList",
+	                "teamId": getUrlParam("term"),
+	                "levelName": unescape(getUrlParam("level")),
+	                "maxNum": "0"
+	            },
+	            type: "post",
+	            datatype: "json",
+	            async: false,
+	            success: function (data) {
+	                // alert(data);
+	                var data = eval('(' + data + ')');
+	                testJson = $.parseJSON(data);
+	                console.log(testJson);
+	                var content = "";
+	                // alert("data:" + testJson.ds);
+	                var items = testJson.ds;
+	                for (var item in items) {
+	                    content += "<a rel='" + items[item].img_url + //图片地址
 							"' title='" + items[item].title + //显示标题
 							"' href='Play.html?id=" + items[item].id + "'>" //链接地址   视频地址
 							+
 							items[item].termsContent + " " + items[item].levelTitle + "<br/>" +
 							"作者:" + items[item].author + "<br/>简介:" + items[item].zhaiyao + "</a>" //显示内容
-					}
-					$(".bank").html(content);
-				},
-				error: function (data) {
-					alert("error:" + data)
-				}
-			});
-		});
+	                }
+	                $(".bank").html(content);
+	            },
+	            error: function (data) {
+	                alert("获取数据发生错误！请回到上一页");
+	                window.open("ShowTerms.html", "_self");
+	            }
+	        });
+	    });
 
 		window.onload = function () {
 			// alert($(".diapo").length);

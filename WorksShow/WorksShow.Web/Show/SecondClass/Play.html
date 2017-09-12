@@ -14,7 +14,7 @@
         }
 
         .page {
-            width: 800px;
+            width: 640px;
             margin: 70px auto;
         }
 
@@ -23,10 +23,12 @@
             margin-top: 5px;
             margin-bottom: 5px;
             margin-left: 5px;
+            text-align: center;
         }
 
         .content {
-            background: white;
+            margin-top: 15px;
+            background:white;
             text-align: left;
         }
 
@@ -45,20 +47,20 @@
     <script type="text/javascript" src="navbar.js"></script>
     <div class="page">
         <!-- <h3>作品名称</h3>
-        flash播放器begin 
+         flash播放器begin  
         <object class id="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
-            width="800" height="480">
+            width="640" height="400">
         <param name="movie" value="./src/flvplayer.swf">
         <param name="quality" value="high">
         <param name="allowFullScreen" value="true">
         <param name="FlashVars" value="vcastr_file=images/1234.flv">
-        <embed src="./src/flvplayer.swf" allowfullscreen="true" flashvars="vcastr_file=images/1234.flv" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="800" height="480"></embed>
+        <embed src="./src/flvplayer.swf" allowfullscreen="true" flashvars="vcastr_file=images/1234.flv" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="640" height="400"></embed>
       </object>
-        flash播放器end 
+         flash播放器end  
 
-         显示内容 
+          显示内容  
         <div class="content">
-            <h4>项目介绍</h4>
+            <h4>作品名称</h4>
             <p>作者：leen</p>
             <p>2016-1017第二学期 二等奖</p>
             <p>简介：吧啦啦啦</p>
@@ -72,7 +74,7 @@
                 url: "/Service/pData.ashx",
                 data: {
                     "t": "GetWorkbyID",
-                    "workID": "65"
+                    "workID": getUrlParam("id")
                 },
                 type: "post",
                 datatype: "json",
@@ -87,43 +89,32 @@
                         content = "<div class='content'>" +
                             "<h3>" + items[item].title + "</h3>" + //标题
                             "<object class id='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0'" +
-                            " width='800' height='480'>" +
+                            " width='640' height='400'>" +
                             "<param name='movie' value='./src/flvplayer.swf'>" +
                             "<param name='quality' value='high'>" +
                             "<param name='allowFullScreen' value='true'>" +
-                            "<param name='FlashVars' value='vcastr_file=" + items[item].link_url +"'>" + //视频链接
+                            "<param name='FlashVars' value='vcastr_file=" + items[item].link_url +
+                            "'>" + //视频链接
                             "<embed src='./src/flvplayer.swf' allowfullscreen='true' flashvars='vcastr_file=" +
                             items[item].link_url +
-                            "' quality='high' pluginspage='http://www.macromedia.com/go/getflashplayer' type='application/x-shockwave-flash' width='800' height='480'></embed>" +
+                            "' quality='high' pluginspage='http://www.macromedia.com/go/getflashplayer' type='application/x-shockwave-flash' width='640' height='400'></embed>" +
                             "</object>" +
-                            // <!-- flash播放器end -->
+                        // <!-- flash播放器end -->
 
-                            // <!-- 显示内容 -->
-                            "<h4>项目介绍</h4>" +
+                        // <!-- 显示内容 -->
+                        // "<h4>项目介绍</h4>" +
+                            "<h4>" + items[item].title + "</h4>" +
                             "<p>" + items[item].termsContent + " " + items[item].levelTitle +
                             "</p>" + //学期等级
-                            "<p> 作者：" + items[item].author + " </p>" +    //作者
-                            "<p>简介： " + items[item].zhaiyao + "</p>" +    //摘要
+                            "<p> 作者：" + items[item].author + " </p>" + //作者
+                            "<p>简介： " + items[item].zhaiyao + "</p>" + //摘要
                             "</div>";
                     }
-                    // for (var item in items) {
-                    //     content += "<a rel='" + items[item].img_url + //图片地址
-                    //         "' title='" + items[item].title + //显示标题
-                    //         "' href='" + items[item].link_url + "'>" //链接地址   视频地址
-                    //         +
-                    //         items[item].termsContent + " " + items[item].levelTitle + "<br/>" +
-                    //         "作者:" + items[item].author + "<br/>简介:" + items[item].zhaiyao + "</a>" //显示内容
-                    // content += "<a rel='" + items[item].img_url + //图片地址
-                    // 		"' title='" + items[item].title + //显示标题
-                    // 		"' href='Play.html?id=" + items[item].id + "'>" //链接地址   视频地址
-                    // 		+
-                    // 		items[item].termsContent + " " + items[item].levelTitle + "<br/>" +
-                    // 		"作者:" + items[item].author + "<br/>简介:" + items[item].zhaiyao + "</a>" //显示内容
-                    // }
                     $(".page").html(content);
+                    if (testJson.ok == false) { alert("获取数据发生错误，请回到上一页。"); history.back(); }
                 },
                 error: function (data) {
-                    alert("error:" + data)
+                    alert("获取数据发生错误，请回到上一页。"); history.back();
                 }
             });
 

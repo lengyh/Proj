@@ -85,7 +85,8 @@
 					$(".bank").html(content);
 				},
 				error: function (data) {
-					alert("error:" + data)
+				    alert("获取数据发生错误，请刷新页面");
+				    window.open("ShowAll.html", "_self");
 				}
 			});
 

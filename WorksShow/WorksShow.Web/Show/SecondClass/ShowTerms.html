@@ -39,82 +39,83 @@
 		<script type="text/javascript" src="footer.js"></script>
 	</div>
 	<script type="text/javascript">
-		$(function () {
-			var terms;
-			//获取 学期信息并显示
-			$.ajax({
-				url: "/Service/pData.ashx",
-				data: {
-					"t": "SecondClassroomTeamList"
-				},
-				type: "post",
-				datatype: "json",
-				async: false,
-				success: function (data) {
-					var data = eval('(' + data + ')');
-					testJson = $.parseJSON(data);
-					console.log(testJson);
-					var items = testJson.ds;
+	    $(function () {
+	        var terms;
+	        //获取 学期信息并显示
+	        $.ajax({
+	            url: "/Service/pData.ashx",
+	            data: {
+	                "t": "SecondClassroomTeamList"
+	            },
+	            type: "post",
+	            datatype: "json",
+	            async: false,
+	            success: function (data) {
+	                var data = eval('(' + data + ')');
+	                testJson = $.parseJSON(data);
+	                console.log(testJson);
+	                var items = testJson.ds;
 
-					terms = items;
+	                terms = items;
 
-					var contentTerms = " ";
-					for (var item = 1; item < items.length; item++) {
-						contentTerms += "<div class='xs-6 sm-4 lg-3 demo-item'>" +
+	                var contentTerms = " ";
+	                for (var item = 1; item < items.length; item++) {
+	                    contentTerms += "<div class='xs-6 sm-4 lg-3 demo-item'>" +
 							"<img class='mg-trigger img-responsive' src='" + items[item].img_url + "' alt='' title='点击[展开/隐藏]作品明细'>" +
 							"<span'>" + items[0].title + "<br>" + items[item].content + "</span>" +
 							"</div>";
-					}
-					$("#terms").html(contentTerms);
-				},
-				error: function (data) {
-					alert("error:" + data)
-				}
-			});
-			// ajax end
-			var contentLevel = " ";
-			for (var item = 1; item < terms.length; item++) {
-				// 获取对应学期下的等级信息
-				$.ajax({
-					url: "/Service/pData.ashx",
-					data: {
-						"t": "LevelList",
-						"teamId": terms[item].id
-					},
-					type: "post",
-					datatype: "json",
-					async: false,
-					success: function (data) {
-						var data = eval('(' + data + ')');
-						testJson = $.parseJSON(data);
-						console.log(testJson);
+	                }
+	                $("#terms").html(contentTerms);
+	            },
+	            error: function (data) {
+	                alert("获取数据发生错误，请刷新页面");
+	                window.open("ShowTerms.html", "_self");
+	            }
+	        });
+	        // ajax end
+	        var contentLevel = " ";
+	        for (var item = 1; item < terms.length; item++) {
+	            // 获取对应学期下的等级信息
+	            $.ajax({
+	                url: "/Service/pData.ashx",
+	                data: {
+	                    "t": "LevelList",
+	                    "teamId": terms[item].id
+	                },
+	                type: "post",
+	                datatype: "json",
+	                async: false,
+	                success: function (data) {
+	                    var data = eval('(' + data + ')');
+	                    testJson = $.parseJSON(data);
+	                    console.log(testJson);
 
-						var items = testJson.ds;
+	                    var items = testJson.ds;
 
-						var contentLeft = "<div class=''>" +
+	                    var contentLeft = "<div class=''>" +
 							"<div class='container'>" +
 							"<div class='row row-flex'>";
-						var content = " ";
-						var contentRight = " </div> </div> </div>";
-						//alert("data:" + testJson.ds);
-						for (var item in items) {
-							content +=
+	                    var content = " ";
+	                    var contentRight = " </div> </div> </div>";
+	                    //alert("data:" + testJson.ds);
+	                    for (var item in items) {
+	                        content +=
 								"<div class='xs-6 sm-4 lg-3 demo-item-sub' onmouseover=this.style.cursor='pointer' onclick=window.open('" +
 								"ShowTermWorks.html?term=" + items[item].parent_id + "&level=" + escape(items[item].title) +
 								"','_self')>" +
 								"<img src='" + items[item].img_url + "' alt='" + items[item].title + "'>" +
 								"<span>" + items[item].title + "</span>" + "</div>";
-						}
-						contentLevel += contentLeft + content + contentRight;
-					},
-					error: function (data) {
-						return false;
-					}
-				});
-			}
-			$("#level").html(contentLevel);
+	                    }
+	                    contentLevel += contentLeft + content + contentRight;
+	                },
+	                error: function (data) {
+	                    return false;
+	                }
+	            });
+	        }
+	        $("#level").html(contentLevel);
 
-		});
+	    });
 
 		function getUrlParam(name) {
 			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
