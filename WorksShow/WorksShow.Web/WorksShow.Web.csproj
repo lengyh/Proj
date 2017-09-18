@@ -175,7 +175,6 @@
     <Content Include="App_Data\DTcmsdb.mdb" />
     <Content Include="aspx\article_list.aspx" />
     <Content Include="aspx\article_show.aspx" />
-    <Content Include="aspx\feedback.aspx" />
     <Content Include="aspx\index.aspx" />
     <Content Include="aspx\infomanagement_show.aspx" />
     <Content Include="aspx\producti_list.aspx" />

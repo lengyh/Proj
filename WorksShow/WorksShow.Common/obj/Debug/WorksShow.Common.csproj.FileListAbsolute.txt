@@ -28,3 +28,4 @@ I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Common\bin\Debug\Wo
 I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Common\bin\Debug\WorksShow.Common.pdb
 I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Common\obj\Debug\WorksShow.Common.dll
 I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Common\obj\Debug\WorksShow.Common.pdb
+I:\Project\学生作品展示平台\Proj\WorksShow\WorksShow.Common\obj\Debug\WorksShow.Common.csprojResolveAssemblyReference.cache

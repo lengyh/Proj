@@ -287,7 +287,7 @@ var imf = function () {
                 if (this.img.complete && this.img.width) {
                     /* ---- get size image ---- */
                     this.iw = this.img.width;
-                    this.ih = this.img.height;
+                    this.ih = this.img.height;                    
                     this.r = this.ih / this.iw;
                     this.loaded = true;
                     /* ---- create reflexion ---- */
