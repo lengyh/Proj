@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>友情链接 - {config.webname}</title>
+<link rel="stylesheet" href="{config.webpath}scripts/ui/skins/Aqua/css/ligerui-all.css" />
+<link type="text/css" rel="stylesheet" href="{config.webpath}css/pagination.css" />
+<link rel="stylesheet" href="{config.templateskin}/css/style.css" />
+<script type="text/javascript" src="{config.webpath}scripts/jquery/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="{config.webpath}scripts/jquery/jquery.form.js"></script>
+<script type="text/javascript" src="{config.webpath}scripts/jquery/jquery.validate.min.js"></script>
+<script type="text/javascript" src="{config.webpath}scripts/jquery/messages_cn.js"></script>
+<script type="text/javascript" src="{config.webpath}scripts/ui/js/ligerBuild.min.js"></script>
+<script type="text/javascript" src="{config.templateskin}/js/base.js"></script>
+<script type="text/javascript">
+$(function(){
+	//初始化表单
+	AjaxOnSubmit('comment_form', 'btnSubmit', '{config.webpath}plugins/link/ajax.ashx?action=add');
+});
+</script>
+<body>
+<div class="container_12">
+ <!-- .header -->
+ <div class="grid_4">
+   <h1><a href="{config.weburl}">DTcms v1.0</a></h1>
+ </div>
+ <div class="search">
+   <input id="keywords" name="keywords" type="text" class="search_text" value="输入关健字" onfocus="javascript:if(this.value=='输入关健字')this.value='';" onblur="javascript:if(this.value=='')this.value='输入关健字'" />
+   <input type="button" value="搜索" class="search_button" onclick="SiteSearch('{config.webpath}search.aspx', '#keywords');" />
+ </div>
+ <!-- .nav -->
+ <div class="clear"></div>
+ <div class="nav">
+  <ul>
+   <li><a href="<%linkurl("index","")%>">首 页</a></li>
+   <li><a href="<%linkurl("article_list","")%>">新闻资讯</a></li>
+   <li><a href="<%linkurl("goods_list","")%>">商品展示</a></li>
+   <li><a href="<%linkurl("photo_list","")%>">图片分享</a></li>
+   <li><a href="<%linkurl("down_list","")%>">资源下载</a></li>
+   <li><a href="<%linkurl("feedback","")%>">在线留言</a></li>
+   <li><a href="<%linkurl("content","about")%>">关于我们</a></li>
+   <li><a href="<%linkurl("content","contact")%>">联系我们</a></li>
+  </ul>
+ </div>
+ <!-- /.nav -->
+ <!-- /.header -->
+ <div class="clear"></div>
+ <div class="grid_8">
+   <h2 class="page_title"><a>友情链接</a></h2>
+   <div class="comment_box" style="padding-top:0; border:0; ">
+     <!--Link-->
+     <div class="links">
+       <ul class="img">
+         <%set (DataTable){imgList}=new WorksShow.Web.Plugin.Link.link().get_link_list(0, "is_image=1")%>
+         <%loop list1 imgList%>
+         <li><a target="_blank" href="{list1[site_url]}" title="{list1[title]}"><img src="{list1[img_url]}" width="88" height="31" /></a></li>
+         <%/loop%>
+       </ul>
+       <ul class="txt">
+         <%set (DataTable){txtList}=new WorksShow.Web.Plugin.Link.link().get_link_list(0, "is_image=0")%>
+         <%loop list2 txtList%>
+         <li><a target="_blank" href="{list2[site_url]}" title="{list2[title]}">{list2[title]}</a></li>
+         <%/loop%>
+       </ul>
+     </div>
+     <!--/Link-->
+     <div class="line10"></div>
+     <h3 class="add">申请链接<a name="Add" id="Add"></a></h3>
+     <form id="comment_form" name="comment_form">
+     <div class="feedback_add">
+       <dl>
+         <dt>网站名称：</dt>
+         <dd><input id="txtTitle" name="txtTitle" type="text" class="text normal required" /><label>*需要申请友情链接的网站标题</label></dd>
+       </dl>
+       
+       <dl>
+         <dt>联系人：</dt>
+         <dd><input id="txtUserName" name="txtUserName" type="text" class="text normal required" /><label>*该网站联系人的姓名</label></dd>
+       </dl>
+       <dl>
+         <dt>联系电话：</dt>
+         <dd><input id="txtUserTel" name="txtUserTel" type="text" class="text normal" /></dd>
+       </dl>
+       <dl>
+         <dt>电子邮箱：</dt>
+         <dd><input id="txtEmail" name="txtEmail" type="text" class="text normal email" /></dd>
+       </dl>
+       <dl>
+         <dt>链接网址：</dt>
+         <dd><input id="txtSiteUrl" name="txtSiteUrl" type="text" class="text normal required url" /><label>*申请友情链接的网址</label></dd>
+       </dl>
+       <dl>
+         <dt>LOGO图片：</dt>
+         <dd><input id="txtImgUrl" name="txtImgUrl" type="text" class="text normal" /><label>网站链接的LOGO图片地址</label></dd>
+       </dl>
+       <dl>
+         <dt>验证码：</dt>
+         <dd>
+           <input id="txtCode" name="txtCode" type="text" class="text required" style="width:80px;" />
+           <a href="javascript:;" onclick="ToggleCode(this, '{config.webpath}tools/verify_code.ashx');return false;"><img src="{config.webpath}tools/verify_code.ashx" width="80" height="22" /> 看不清楚？</a>
+         </dd>
+       </dl>
+       <dl>
+         <dt>&nbsp;</dt>
+         <dd>
+           <input name="btnSubmit" type="submit" value="申请链接" class="submit" />
+         </dd>
+       </dl>
+     </div>
+     <div class="clear"></div>
+     <input type="hidden" id="turl" value="<%linkurl("link","")%>" />
+     </form>
+   </div>
+ </div>
+ <!-- end content -->
+ <div class="grid_4 sidebar">
+  <ul class="sidebar_nav">
+   <%set (DataTable){contentlist}=get_content_list(4, 0, 0, "is_lock=0")%>
+    <%loop cdr contentlist%>
+    <li>
+      <a href="<%linkurl("content",{cdr[call_index]})%>">{cdr[title]}</a></li>
+    <%/loop%>
+  </ul>
+  <h2><a href="<%linkurl("article_list","")%>">最新资讯</a></h2>
+  <ul class="news_list">
+   <%set (DataTable){article_list}=get_article_list(1, 0, 8, "is_lock=0")%>
+   <%loop adr article_list%>
+   <li><span>( <%datetostr({adr[add_time]},MM-dd)%> )</span><a href="<%linkurl("article_show",{adr[id]})%>"><%cutstring({adr[title]},32)%></a></li>
+   <%/loop%>
+  </ul>
+  
+ </div>
+ <!-- end sidebar -->
+ <!-- .footer -->
+ <div class="clear"></div>
+ <div class="grid_12 footer"> <a href="#" class="back_to_top">top</a>
+   <p>{config.webcopyright} &nbsp;{config.webcountcode}</p>
+ </div>
+ <div class="clear"></div>
+ <!-- /.footer -->
+</div>
+</body>
+</html>

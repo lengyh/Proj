@@ -1,0 +1,136 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    padding-left:10px;
+    width: 100%;
+    height: 60px;
+    /*
+    background: url("../images/eol_index_footer_bg.jpg") repeat-x;
+    */
+    background: -webkit-radial-gradient(center, circle, #74a9ad, #2c529b);
+    background: -moz-radial-gradient(center, circle, #74a9ad, #2c529b);
+    background: -ms-radial-gradient(center, circle, #74a9ad, #2c529b);
+    background: -o-radial-gradient(center, circle, #74a9ad, #2c529b);
+    background: radial-gradient(center, circle, #74a9ad, #2c529b);
+    z-index: 214748;
+}
+
+
+.navbarBox {
+    margin: 0 auto;
+    /* width: 1004px; */
+    min-width: 540px;
+    height: 60px;
+}
+
+
+/* 学校名称 */
+.schoolName {
+    width: 320px;
+    height: 50px;
+    background: url("../images/school_name.png") no-repeat 0 -5px;
+    background-size: 265px 60px;   
+    float: left;
+}
+
+.schoolName img {
+    vertical-align: middle;
+}
+
+/* 标题 */
+.navTitle {
+    color: white;   
+    font-family:"@icomoon,@黑体,@华文楷体,@宋体";
+    font-size:22px;
+    font-weight:bolder;
+    float: left;
+    line-height: 60px;
+    text-align: left;
+}
+
+.navTitle p {
+    font-family:Cursive ;
+    font-size: 20px;
+}
+
+/* 底部版权信息 */
+.footer {
+    position: fixed;
+    bottom: -0;
+    z-index: 2000;
+    width: 100%;
+    height: 30px;
+    /*background: url("../images/eol_index_footer_bg.jpg") repeat-x;*/
+    background: -webkit-radial-gradient(center, circle, #74a9ad, #2c529b);
+    background: -moz-radial-gradient(center, circle, #74a9ad, #2c529b);
+    background: -ms-radial-gradient(center, circle, #74a9ad, #2c529b);
+    background: -o-radial-gradient(center, circle, #74a9ad, #2c529b);
+    background: radial-gradient(center, circle, #74a9ad, #2c529b);
+}
+
+.footerBox {
+    text-align: center;
+}
+
+.footer p {
+    font-size: 14px;
+    line-height: 30px;
+    color: white;
+}
+
+.img-responsive
+{
+    
+}
+
+
+.demo-item
+{
+    color:Black;
+    background: #eee;
+    margin: 3px auto;
+    min-width:240px;
+    max-width:330px;
+    width: 23%;
+    height: 250px;
+    display: block;
+    padding: 12px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 1px 1px 0 #c7c7c7;
+    -moz-box-shadow: inset 0 1px 1px 0 #c7c7c7;
+    box-shadow: inset 0 1px 1px 0 #c7c7c7;
+    float:left;
+}
+
+.demo-item-sub
+{
+    color:Black;
+    width: 23%;
+    margin: auto;
+    min-width:240px;
+    max-width:330px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 0 5px #000; 
+     -webkit-box-shadow: 0 0 5px #000; 
+    -moz-box-shadow: 0 0 5px #000; 
+    background: -webkit-radial-gradient(center, circle, #f0f0f0, #74a9ad);
+    background: -moz-radial-gradient(center, circle, #f0f0f0, #74a9ad);
+    background: -ms-radial-gradient(center, circle, #f0f0f0, #74a9ad);
+    background: -o-radial-gradient(center, circle, #f0f0f0, #74a9ad);
+    background: radial-gradient(center, circle, #f0f0f0, #74a9ad);
+    float:left;
+}
+

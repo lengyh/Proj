@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -14,6 +15,11 @@
     <AssemblyName>WorksShow.Web</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,11 +73,11 @@
     <Content Include="admin\images\folder.gif" />
     <Content Include="admin\images\folder_open.gif" />
     <Content Include="admin\images\foot_bg.gif" />
-    <Content Include="admin\images\head-logo.png" />
     <Content Include="admin\images\head_bg.gif" />
     <Content Include="admin\images\head_bg_line.gif" />
     <Content Include="admin\images\head_logo.png" />
     <Content Include="admin\images\head_logo1.png" />
+    <Content Include="admin\images\head_logo2.png" />
     <Content Include="admin\images\home.gif" />
     <Content Include="admin\images\ico-0.png" />
     <Content Include="admin\images\ico-0_.png" />
@@ -423,16 +429,11 @@
     <Content Include="Show\SecondClass\js\slick\slick.min.js" />
     <Content Include="Show\SecondClass\navbar.js" />
     <Content Include="Show\SecondClass\ShowTerms.html" />
-    <Content Include="obj\Debug\DTcms.Web.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\DTcms.Web.dll" />
-    <Content Include="obj\Debug\DTcms.Web.pdb" />
     <Content Include="plugins\feedback\admin\index.aspx" />
     <Content Include="plugins\feedback\admin\reply.aspx" />
-    <Content Include="plugins\feedback\bin\DTcms.Web.Plugin.Feedback.dll" />
     <Content Include="plugins\feedback\templet\feedback.html" />
     <Content Include="plugins\link\admin\index.aspx" />
     <Content Include="plugins\link\admin\link_edit.aspx" />
-    <Content Include="plugins\link\bin\DTcms.Web.Plugin.Link.dll" />
     <Content Include="plugins\link\templet\link.html" />
     <Content Include="scripts\calendar.js" />
     <Content Include="scripts\jquery-1.4.4.min.js" />
@@ -1066,15 +1067,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="obj\Debug\Package\" />
-    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="plugins\feedback\bin\" />
+    <Folder Include="plugins\link\bin\" />
     <Folder Include="templates\" />
     <Folder Include="upload\201301\04\" />
     <Folder Include="upload\201301\05\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\ResolveAssemblyReference.cache" />
     <Content Include="plugins\feedback\ajax.ashx" />
     <Content Include="plugins\feedback\plugin.config" />
     <Content Include="plugins\link\ajax.ashx" />
@@ -1123,8 +1122,13 @@
       <Name>WorksShow.Web.UI</Name>
     </ProjectReference>
   </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
