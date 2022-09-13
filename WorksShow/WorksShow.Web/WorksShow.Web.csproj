@@ -20,6 +20,12 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -705,6 +711,7 @@
     <Content Include="Show\SecondClass\src\mg-space.css" />
     <Content Include="Style\Common.css" />
     <Content Include="Style\Login.css" />
+    <Content Include="testPage.html" />
     <Content Include="upload\201212\24\201212240433266718.jpg" />
     <Content Include="upload\201212\24\201212240448435625.jpg" />
     <Content Include="upload\201212\24\201212240543392968.jpg" />
